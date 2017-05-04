@@ -44,6 +44,8 @@ public class Main {
 
         Planner planner = new Planner(N,p,r,z);
         planner.askZtimes();
+        planner.askRandomAndSend();
+        planner.askifBelow();
 
 
     }
