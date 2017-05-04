@@ -17,4 +17,9 @@ public class Process {
     public void setLoad(int load) {
         this.load = load;
     }
+
+    @Override
+    public String toString() {
+        return ("Wymagana moc obliczeniowa procesora: "+load);
+    }
 }

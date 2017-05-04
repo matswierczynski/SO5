@@ -16,10 +16,12 @@ public class Tasks {
 
     Stack<Process> randomTasks (){
         randomTasks.clear();
-    long tasksNr = Math.abs(Math.round(Math.sin(degArg*Math.PI/180))); //kolejna wartość dla sinusa
-    degArg++;
-    for (long i=0;i<tasksNr*10;i++){
-        randomTasks.push(new Process((new Random().nextInt(9))+1)); //generowanie żądanej liczby procesów
+    double tasksNrDouble = Math.abs((Math.sin(degArg*Math.PI/180)))*1000; //kolejna wartość dla sinusa
+        long tasksNr = Math.round(tasksNrDouble);
+    degArg+=10;
+    for (long i=0;i<tasksNr;i++){
+        randomTasks.push(new Process((new Random().nextInt(9))+1));//generowanie żądanej liczby procesów
+        //System.out.println(randomTasks.peek());
     }                                                                          //o obciążeniu 1-10%
     return randomTasks;
 

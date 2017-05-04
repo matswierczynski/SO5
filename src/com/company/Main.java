@@ -5,41 +5,46 @@ public class Main {
 
     public static void main(String[] args) {
 	boolean isCorrect = false;
+	int N=0,p=0,r=0,z=0;
 	while (!isCorrect) {
-        Scanner N = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj liczbę procesorów w systemie");
-        if (N.hasNextInt()) {
-            N.nextInt();
+        if (scanner.hasNextInt()) {
+            N=scanner.nextInt();
             isCorrect = true;
         }
     }
     isCorrect = false;
         while (!isCorrect) {
-            Scanner p = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Podaj maksymalny próg obciążenia");
-            if (p.hasNextInt()) {
-                p.nextInt();
+            if (scanner.hasNextInt()) {
+                p=scanner.nextInt();
                 isCorrect = true;
             }
         }
         isCorrect = false;
         while (!isCorrect) {
-            Scanner r = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Podaj minimalny próg obciążenia ");
-            if (r.hasNextInt()) {
-                r.nextInt();
+            if (scanner.hasNextInt()) {
+                r=scanner.nextInt();
                 isCorrect = true;
             }
         }
         isCorrect = false;
         while (!isCorrect) {
-            Scanner z = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Podaj liczbę maksymalnej ilości zapytań o zajętość");
-            if (z.hasNextInt()) {
-                z.nextInt();
+            if (scanner.hasNextInt()) {
+                z=scanner.nextInt();
                 isCorrect = true;
             }
         }
+
+        Planner planner = new Planner(N,p,r,z);
+        planner.askZtimes();
+
 
     }
 }
